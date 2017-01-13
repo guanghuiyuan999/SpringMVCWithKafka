@@ -23,12 +23,22 @@ public class KafkaConsumerService {
             for (Integer i : keys){
             	 logger.info("======Partition:" + i);
             	 System.err.println("======Partition:" + i);
+                try {
+                    Thread.currentThread().sleep(1000);
+                } catch (InterruptedException e) {
+                    logger.error("======Partition is error!======");
+                }
             }
             Collection<String> values = messages.values();
             for (Iterator<String> iterator = values.iterator(); iterator.hasNext();) {
                 String message = "["+iterator.next()+"]";
                 logger.info("=====message:" + message);
                 System.err.println("=====message:" + message);
+                try {
+                    Thread.currentThread().sleep(1000);
+                } catch (InterruptedException e) {
+                    logger.error("======message is error!======");
+                }
             }
         }
         
