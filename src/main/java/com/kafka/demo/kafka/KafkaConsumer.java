@@ -11,6 +11,8 @@ public class KafkaConsumer implements MessageListener<Integer, String>{
     //@Override
     public void onMessage(ConsumerRecord<Integer, String> record) {
         System.out.println(record);
+        System.out.println(record.key());
+        System.out.println(record.value());
     }
 
 }
